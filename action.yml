@@ -1,0 +1,21 @@
+# action.yml
+name: 'Logstash Config Linter'
+description: 'Lint logstash configuration'
+branding:
+  icon: 'check'
+  color: 'green'
+inputs:
+  linter-version:  # id of input
+    description: 'logstash-config version to lint with'
+    required: false
+    default: '0.5.3'
+  config-directory:
+    description: 'directory containing config files to check'
+    required: false
+    default: './'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.linter-version }}
+    - ${{ inputs.config-directory }}
