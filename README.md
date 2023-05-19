@@ -17,7 +17,7 @@ This action runs [logstash-config](https://github.com/breml/logstash-config) on 
 ## Example usage
 
 ```yaml
-uses: sjafferali@logstash-config-lint-action@v1
+uses: sjafferali/logstash-config-lint-action@v1
 with:
   linter-version: '0.5.3'
   config-directory: './'
